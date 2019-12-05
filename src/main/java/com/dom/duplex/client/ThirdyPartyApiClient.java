@@ -10,14 +10,16 @@ import com.dom.duplex.repository.domain.api.ApiUserList;
 @Service
 public class ThirdyPartyApiClient implements ThirdParty {
 
-    @Autowired
-    private RestTemplate restTemplate;
+	private static final String PATH = "/thirdparty";
 
-    @Value("${thirdparty.url}")
-    private String url;
+	@Autowired
+	private RestTemplate restTemplate;
 
-    @Override
-    public ApiUserList getUsers() {
-	return restTemplate.getForObject(url, ApiUserList.class);
-    }
+	@Value("${thirdparty.url}")
+	private String url;
+
+	@Override
+	public ApiUserList getUsers() {
+		return restTemplate.getForObject(url + PATH, ApiUserList.class);
+	}
 }

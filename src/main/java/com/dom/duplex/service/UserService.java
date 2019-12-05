@@ -16,21 +16,22 @@ import com.dom.duplex.repository.domain.api.ApiUserList;
 @Service
 public class UserService {
 
-    @Autowired
-    private UserRepository userRepository;
+	@Autowired
+	private UserRepository userRepository;
 
-    @Autowired
-    private ThirdyPartyApiClient thirdyPartyApiClient;
+	@Autowired
+	private ThirdyPartyApiClient thirdyPartyApiClient;
 
-    @Scheduled(fixedRate = 4000)
-    public void consumeThirdPartyUsers() {
+	@Scheduled(fixedRate = 4000)
+	public void consumeThirdPartyUsers() {
 
-	final ApiUserList apiUsers = thirdyPartyApiClient.getUsers();
+		final ApiUserList apiUsers = thirdyPartyApiClient.getUsers();
 
-	final List<User> users = apiUsers.getApiUserList().stream().map(u -> new User().setAge(u.getAge())
-		.setHeight(u.getHeight()).setName(u.getName()).setRequestStatus(RequestStatus.HOLDNG))
-		.collect(Collectors.toList());
+		final List<User> users = apiUsers.getApiUserList().stream().map(u -> new User().setAge(u.getAge())
+				.setHeight(u.getHeight()).setName(u.getName()).setRequestStatus(RequestStatus.HOLDNG))
+				.collect(Collectors.toList());
 
-	userRepository.saveAll(users);
-    }
+		userRepository.saveAll(users);
+
+	}
 }
