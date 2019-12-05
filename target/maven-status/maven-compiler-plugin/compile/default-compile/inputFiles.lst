@@ -1,0 +1,12 @@
+D:\DUPLEX\src\main\java\com\dom\duplex\client\ThirdParty.java
+D:\DUPLEX\src\main\java\com\dom\duplex\repository\domain\api\ApiUser.java
+D:\DUPLEX\src\main\java\com\dom\duplex\repository\domain\User.java
+D:\DUPLEX\src\main\java\com\dom\duplex\repository\UserRepository.java
+D:\DUPLEX\src\main\java\com\dom\duplex\RestTemplateConfiguration.java
+D:\DUPLEX\src\main\java\com\dom\duplex\utils\CSVReader.java
+D:\DUPLEX\src\main\java\com\dom\duplex\endpoints\CsvController.java
+D:\DUPLEX\src\main\java\com\dom\duplex\repository\domain\RequestStatus.java
+D:\DUPLEX\src\main\java\com\dom\duplex\client\ThirdyPartyApiClient.java
+D:\DUPLEX\src\main\java\com\dom\duplex\DuplexApplication.java
+D:\DUPLEX\src\main\java\com\dom\duplex\repository\domain\api\ApiUserList.java
+D:\DUPLEX\src\main\java\com\dom\duplex\service\UserService.java
