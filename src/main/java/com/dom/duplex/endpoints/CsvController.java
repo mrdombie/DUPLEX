@@ -8,19 +8,19 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.dom.duplex.repository.UserRepository;
-import com.dom.duplex.repository.domain.User;
+import com.dom.duplex.repository.CsvCrud;
+import com.dom.duplex.repository.domain.CsvEntry;
 import com.dom.duplex.utils.CSVReader;
 
 @RestController
 public class CsvController {
 
-    @Autowired
-    private UserRepository userRepository;
+	@Autowired
+	private CsvCrud csvCrud;
 
-    @PostMapping(value = "/upload", consumes = "test/csv")
-    public void uploadCsv(@RequestBody final InputStream body) throws IOException {
-	userRepository.saveAll(CSVReader.read(User.class, body));
-    }
+	@PostMapping(value = "/upload", consumes = "test/csv")
+	public void uploadCsv(@RequestBody final InputStream body) throws IOException {
+		csvCrud.save(CSVReader.read(CsvEntry.class, body));
+	}
 
 }

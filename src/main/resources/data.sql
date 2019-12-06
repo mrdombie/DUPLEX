@@ -11,16 +11,19 @@ INSERT INTO csv_status (status) VALUES
 ('Holding'),
 ('Processed');
 
-DROP TABLE IF EXISTS users;
+DROP TABLE IF EXISTS csv;
  
-CREATE TABLE users (
+CREATE TABLE csv (
   id INT PRIMARY KEY AUTO_INCREMENT,
+);
+
+DROP TABLE IF EXISTS csv_entry;
+ 
+CREATE TABLE csv_record (
+  id INT PRIMARY KEY AUTO_INCREMENT,
+  csv_id INT FOREIGN KEY NOT NULL,
   name VARCHAR(250) NOT NULL,
   age INT NOT NULL,
   height INT NOT NULL,
   status VARCHAR(15) NOT NULL
 );
-
-INSERT INTO users (name, age, height, status) VALUES
-  ('Dom', 33, 186, 'HOLDING'),
-  ('Dom', 33, 186, 'HOLDING');

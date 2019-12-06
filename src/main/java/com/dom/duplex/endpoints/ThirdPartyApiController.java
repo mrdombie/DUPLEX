@@ -16,5 +16,4 @@ public class ThirdPartyApiController {
 	public void getThirdPartyUsers() {
 		userService.consumeThirdPartyUsers();
 	}
-
 }

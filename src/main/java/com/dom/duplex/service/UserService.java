@@ -8,16 +8,16 @@ import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Service;
 
 import com.dom.duplex.client.ThirdyPartyApiClient;
-import com.dom.duplex.repository.UserRepository;
+import com.dom.duplex.repository.CsvCrud;
+import com.dom.duplex.repository.domain.CsvEntry;
 import com.dom.duplex.repository.domain.RequestStatus;
-import com.dom.duplex.repository.domain.User;
 import com.dom.duplex.repository.domain.api.ApiUserList;
 
 @Service
 public class UserService {
 
 	@Autowired
-	private UserRepository userRepository;
+	private CsvCrud crudRepository;
 
 	@Autowired
 	private ThirdyPartyApiClient thirdyPartyApiClient;
@@ -27,11 +27,10 @@ public class UserService {
 
 		final ApiUserList apiUsers = thirdyPartyApiClient.getUsers();
 
-		final List<User> users = apiUsers.getApiUserList().stream().map(u -> new User().setAge(u.getAge())
+		final List<CsvEntry> users = apiUsers.getApiUserList().stream().map(u -> new CsvEntry().setAge(u.getAge())
 				.setHeight(u.getHeight()).setName(u.getName()).setRequestStatus(RequestStatus.HOLDNG))
 				.collect(Collectors.toList());
 
-		userRepository.saveAll(users);
-
+		crudRepository.save(users);
 	}
 }
