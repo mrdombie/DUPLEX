@@ -9,6 +9,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import com.dom.duplex.repository.domain.Csv;
 import com.dom.duplex.repository.domain.CsvEntry;
+import com.dom.duplex.repository.domain.RequestStatus;
 import com.dom.duplex.repository.example.ExampleCriteria;
 
 @Repository
@@ -37,7 +38,7 @@ public class CsvCrudImpl implements CsvCrud {
 
 	private void updateId(final List<CsvEntry> csvs, final int storedCsv) {
 		csvs.forEach(ce -> {
-			ce.setCsvId(storedCsv);
+			ce.setCsvId(storedCsv).setRequestStatus(RequestStatus.PENDING);
 		});
 	}
 }

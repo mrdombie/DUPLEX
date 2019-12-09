@@ -5,7 +5,8 @@ import java.util.List;
 import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.annotation.Bean;
+import org.springframework.beans.factory.config.ConfigurableBeanFactory;
+import org.springframework.context.annotation.Scope;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;
 
@@ -14,6 +15,7 @@ import com.dom.duplex.repository.domain.CsvEntry;
 import com.dom.duplex.repository.example.ExampleCriteria;
 
 @Component
+@Scope(scopeName = ConfigurableBeanFactory.SCOPE_SINGLETON)
 public class CsvBean {
 
 	@Autowired
@@ -21,7 +23,6 @@ public class CsvBean {
 
 	private final Map<Integer, CsvEntry> processableEntrys = new HashMap<>();
 
-	@Bean(name = "toProcessList")
 	@Scheduled(fixedDelay = 10000)
 	public Map<Integer, CsvEntry> getProcessableEntrys() {
 

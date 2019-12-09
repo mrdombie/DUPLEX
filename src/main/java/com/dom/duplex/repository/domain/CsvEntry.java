@@ -19,8 +19,8 @@ import javax.persistence.Table;
 public class CsvEntry {
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
-	@Column(name = "id")
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name = "entry_id")
 	private int id;
 
 	// TODO Add Foreign Key here

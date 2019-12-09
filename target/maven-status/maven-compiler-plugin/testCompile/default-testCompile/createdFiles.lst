@@ -1,0 +1,5 @@
+com\dom\duplex\DuplexApplicationTests.class
+com\dom\duplex\it\controller\csv\CsvControllerIT.class
+com\dom\duplex\test\service\UserServiceTest.class
+com\dom\duplex\test\service\PresentationServiceTest.class
+com\dom\duplex\it\service\UserServiceIntergrationTest.class
