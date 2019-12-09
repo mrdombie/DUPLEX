@@ -1,7 +1,7 @@
 package com.dom.duplex.client;
 
-import com.dom.duplex.repository.domain.api.ApiUserList;
+import org.springframework.http.ResponseEntity;
 
 public interface ThirdParty {
-	ApiUserList getUsers();
+	ResponseEntity<byte[]> getUsers();
 }

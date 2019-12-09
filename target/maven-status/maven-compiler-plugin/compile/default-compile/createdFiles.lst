@@ -6,6 +6,7 @@ com\dom\duplex\RestTemplateConfiguration.class
 com\dom\duplex\service\PresentationService.class
 com\dom\duplex\repository\CsvCrud.class
 com\dom\duplex\client\ThirdParty.class
+com\dom\duplex\endpoints\exception\CsvExceptionHandler.class
 com\dom\duplex\repository\CsvEntryRepository.class
 com\dom\duplex\client\ThirdyPartyApiClient.class
 com\dom\duplex\repository\domain\Csv.class

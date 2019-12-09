@@ -2,10 +2,10 @@ package com.dom.duplex.client;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.http.HttpMethod;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
-
-import com.dom.duplex.repository.domain.api.ApiUserList;
 
 @Service
 public class ThirdyPartyApiClient implements ThirdParty {
@@ -19,7 +19,7 @@ public class ThirdyPartyApiClient implements ThirdParty {
 	private String url;
 
 	@Override
-	public ApiUserList getUsers() {
-		return restTemplate.getForObject(url + PATH, ApiUserList.class);
+	public ResponseEntity<byte[]> getUsers() {
+		return restTemplate.exchange(url + PATH, HttpMethod.GET, null, byte[].class);
 	}
 }

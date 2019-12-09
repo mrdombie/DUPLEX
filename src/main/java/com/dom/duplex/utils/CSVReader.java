@@ -10,15 +10,15 @@ import com.fasterxml.jackson.dataformat.csv.CsvSchema;
 
 public final class CSVReader {
 
-    private static final CsvMapper MAPPER = new CsvMapper();
+	private static final CsvMapper MAPPER = new CsvMapper();
 
-    private CSVReader() {
-	// empty by design
-    }
+	private CSVReader() {
+		// empty by design
+	}
 
-    public static <T> List<T> read(final Class<T> clazz, final InputStream stream) throws IOException {
-	final CsvSchema schema = MAPPER.schemaFor(clazz).withHeader().withColumnReordering(true);
-	final ObjectReader reader = MAPPER.readerFor(clazz).with(schema);
-	return reader.<T>readValues(stream).readAll();
-    }
+	public static <T> List<T> read(final Class<T> clazz, final InputStream stream) throws IOException {
+		final CsvSchema schema = MAPPER.schemaFor(clazz).withHeader().withColumnReordering(true);
+		final ObjectReader reader = MAPPER.readerFor(clazz).with(schema);
+		return reader.<T>readValues(stream).readAll();
+	}
 }

@@ -48,6 +48,5 @@ public class CsvControllerIT {
 				MockMvcRequestBuilders.multipart("/upload").file("file", csvFIle.getBytes()).characterEncoding("UTF-8"))
 				.andExpect(status().isOk());
 
-		System.out.println("test");
 	}
 }

@@ -1,4 +1,4 @@
-package com.dom.duplex.it.service;
+package com.dom.duplex.it.controller.csv;
 
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
@@ -11,8 +11,6 @@ import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.cloud.contract.wiremock.AutoConfigureWireMock;
-import org.springframework.http.MediaType;
 import org.springframework.mock.web.MockMultipartFile;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.TestExecutionListeners;
@@ -25,37 +23,29 @@ import com.github.springtestdbunit.DbUnitTestExecutionListener;
 import com.github.springtestdbunit.annotation.DatabaseOperation;
 import com.github.springtestdbunit.annotation.DatabaseSetup;
 import com.github.springtestdbunit.annotation.ExpectedDatabase;
-import com.github.tomakehurst.wiremock.client.WireMock;
-import com.google.gson.Gson;
 
 @SpringBootTest
-@AutoConfigureWireMock(port = 8081)
-@AutoConfigureMockMvc
 @ExtendWith(SpringExtension.class)
+@AutoConfigureMockMvc
 @ContextConfiguration
 @TestExecutionListeners({ DependencyInjectionTestExecutionListener.class, DbUnitTestExecutionListener.class })
-public class UserServiceIntergrationTest {
-
-	private static final Gson GSON = new Gson();
+public class CsvControllerFailureIT {
 
 	@Autowired
 	private MockMvc mvc;
 
-	@Test
 	@DatabaseSetup(value = "/csv.xml", type = DatabaseOperation.INSERT)
-	@ExpectedDatabase("/csv_expected.xml")
-	public void testServiceIntergrationSuccess() throws Exception {
+	@ExpectedDatabase("/csv_failure_expected.xml")
+	@Test
+	public void testCsvInvalidCsvUploadFailureTest() throws Exception {
 
-		final File file = new File("src/test/resources/user.csv");
+		final File file = new File("src/test/resources/invalid_user.csv");
 		final InputStream inputStream = new FileInputStream(file);
 
-		final MockMultipartFile csvFIle = new MockMultipartFile("csvData", "test.csv", "multipart/form-data",
-				inputStream);
+		final MockMultipartFile csvFIle = new MockMultipartFile("csvData", "test.csv", "text/plain", inputStream);
 
-		WireMock.stubFor(WireMock.get(WireMock.urlEqualTo("/v1/dom/thirdparty")).willReturn(
-				WireMock.aResponse().withHeader("Content-Type", "application/json").withBody(csvFIle.getBytes())));
-
-		mvc.perform(MockMvcRequestBuilders.get("/thirdparty").accept(MediaType.APPLICATION_JSON))
-				.andExpect(status().isOk());
+		mvc.perform(
+				MockMvcRequestBuilders.multipart("/upload").file("file", csvFIle.getBytes()).characterEncoding("UTF-8"))
+				.andExpect(status().isBadRequest());
 	}
 }
