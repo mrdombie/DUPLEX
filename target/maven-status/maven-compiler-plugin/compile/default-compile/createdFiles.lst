@@ -1,4 +1,6 @@
 com\dom\duplex\client\transformer\UserApiTransformer.class
+com\dom\duplex\component\CsvPoolComponent.class
+com\dom\duplex\endpoints\DataPresentationController.class
 com\dom\duplex\repository\CsvCrudImpl.class
 com\dom\duplex\service\UserService.class
 com\dom\duplex\repository\CsvRepository.class
@@ -17,8 +19,8 @@ com\dom\duplex\repository\domain\RequestStatus.class
 com\dom\duplex\utils\CSVReader.class
 com\dom\duplex\endpoints\ThirdPartyApiController.class
 com\dom\duplex\DuplexApplication.class
-com\dom\duplex\bean\CsvBean.class
 com\dom\duplex\client\PresentationApi.class
+com\dom\duplex\bean\RateLimitBean.class
 com\dom\duplex\repository\example\ExampleCriteria.class
 com\dom\duplex\client\PresentationApiClient.class
 com\dom\duplex\repository\domain\api\ApiUser.class

@@ -7,4 +7,5 @@ import com.dom.duplex.repository.domain.CsvEntry;
 
 @Repository
 public interface CsvEntryRepository extends JpaRepository<CsvEntry, Long> {
+
 }

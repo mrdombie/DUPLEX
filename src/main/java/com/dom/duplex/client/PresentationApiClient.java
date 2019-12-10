@@ -10,7 +10,7 @@ import com.dom.duplex.repository.domain.api.DataApiUser;
 @Service
 public class PresentationApiClient implements PresentationApi {
 
-	private static final String PATH = "/thirdparty";
+	private static final String PATH = "/presentation";
 
 	@Autowired
 	private RestTemplate restTemplate;

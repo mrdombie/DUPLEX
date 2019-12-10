@@ -3,5 +3,5 @@ package com.dom.duplex.client;
 import org.springframework.http.ResponseEntity;
 
 public interface ThirdParty {
-	ResponseEntity<byte[]> getUsers();
+	ResponseEntity<String> getUserCsvs();
 }

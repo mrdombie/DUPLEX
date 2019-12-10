@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dataset>
 	
-	<csv_status status="Pending"/>
-	<csv_status status="Failed"/>
-	<csv_status status="Holding"/>
-	<csv_status status="Processed"/>
+	<csv_status id="1" status="PENDING"/>
+	<csv_status id="2" status="FAILED"/>
+	<csv_status id="3" status="HOLDING"/>
+	<csv_status id="4" status="PROCESSED"/>
 
 	<csv id="1"/>
-	<csv_entry entry_id="1" csv_id="1" name="tim" age="22" height="150" status="HOLDING" />				
-		
+	
+	<csv_entry entry_id="1" csv_id="1" name="tim" age="21" height="150" status="HOLDING" />				
+				
 </dataset>

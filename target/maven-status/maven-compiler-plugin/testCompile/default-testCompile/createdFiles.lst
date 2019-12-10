@@ -1,5 +1,7 @@
-com\dom\duplex\DuplexApplicationTests.class
-com\dom\duplex\it\controller\csv\CsvControllerIT.class
-com\dom\duplex\test\service\UserServiceTest.class
+com\dom\duplex\it\service\UserServiceIntergrationIT.class
 com\dom\duplex\test\service\PresentationServiceTest.class
-com\dom\duplex\it\service\UserServiceIntergrationTest.class
+com\dom\duplex\DuplexApplicationTests.class
+com\dom\duplex\it\controller\csv\CsvControllerFailureIT.class
+com\dom\duplex\it\controller\csv\CsvControllerIT.class
+com\dom\duplex\test\service\PresentationServiceUnderAgeTest.class
+com\dom\duplex\it\service\PresentationServiceIT.class

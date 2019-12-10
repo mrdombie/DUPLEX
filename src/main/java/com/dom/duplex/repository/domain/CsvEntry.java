@@ -9,11 +9,6 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
-/**
- * id INT PRIMARY KEY AUTO_INCREMENT, name VARCHAR(250) NOT NULL, age INT NOT
- * NULL, height INT NOT NULL, status_id INT NOT NULL
- */
-
 @Entity
 @Table(name = "csv_entry")
 public class CsvEntry {

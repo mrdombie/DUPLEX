@@ -6,15 +6,15 @@
 3	Holding
 4	Processed -->
 	
-	<csv_status id="1" status="Pending"/>
-	<csv_status id="2" status="Failed"/>
-	<csv_status id="3" status="Holding"/>
-	<csv_status id="4" status="Processed"/>
+	<csv_status id="1" status="PENDING"/>
+	<csv_status id="2" status="FAILED"/>
+	<csv_status id="3" status="HOLDING"/>
+	<csv_status id="4" status="PROCESSED"/>
 			
 	<csv id = "1"/>
 	<csv id = "2"/>
 		
-	<csv_entry entry_id="1" csv_id="1" name="tim" age="22" height="150" status="HOLDING" />		
+	<csv_entry entry_id="1" csv_id="1" name="tim" age="21" height="150" status="HOLDING" />		
 	<csv_entry entry_id="2" csv_id="2" name="dom" age="33" height="186" status="PENDING" />		
 	<csv_entry entry_id="3" csv_id="2" name="tom" age="34" height="187" status="PENDING" />		
 	<csv_entry entry_id="4" csv_id="2" name="bom" age="35" height="188" status="PENDING" />		

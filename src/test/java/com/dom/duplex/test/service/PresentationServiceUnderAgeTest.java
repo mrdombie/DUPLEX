@@ -26,15 +26,17 @@ import com.dom.duplex.service.PresentationService;
 import com.google.common.util.concurrent.RateLimiter;
 
 @SpringBootTest
-public class PresentationServiceTest {
+public class PresentationServiceUnderAgeTest {
 
 	private static final String NAME = "Dom";
 
-	private static final int HEIGHT = 186;
+	private static final int HEIGHT = 90;
 
-	private static final int AGE = 33;
+	private static final int AGE = 17;
 
-	private static final Integer DB_ID = null;
+	private static final Integer DB_ID = 1;
+
+	private static final String UNDER_AGE_NAME = "PICARD";
 
 	private static final Map<Integer, CsvEntry> PROCESSABLE_CSVS = new HashMap<>();
 
@@ -63,16 +65,17 @@ public class PresentationServiceTest {
 	public void setup() {
 
 		PROCESSABLE_CSVS.put(DB_ID, new CsvEntry().setAge(AGE).setHeight(HEIGHT).setName(NAME));
-		ALL_CSV_RECORDS.add(new CsvEntry().setAge(18).setName("tim").setHeight(134));
+		ALL_CSV_RECORDS.add(new CsvEntry().setAge(17).setName(NAME).setHeight(HEIGHT));
 
 		Mockito.when(csvPoolComponent.getEntrys()).thenReturn(PROCESSABLE_CSVS);
 		Mockito.when(csvEntryRepository.findAll(Mockito.any(Example.class))).thenReturn(ALL_CSV_RECORDS);
 		Mockito.when(rateLimiter.getRate()).thenReturn(1.0);
 	}
 
+	@SuppressWarnings("unchecked")
 	@Test
-	public void testSuccess() {
-		final DataApiUser apiUser = new DataApiUser().setAge(AGE).setHeight(HEIGHT).setName(NAME);
+	public void testUserUnderEightTeen() {
+		final DataApiUser apiUser = new DataApiUser().setAge(AGE).setName(UNDER_AGE_NAME).setHeight(HEIGHT);
 
 		presentationService.send();
 

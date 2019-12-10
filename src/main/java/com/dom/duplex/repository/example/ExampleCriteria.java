@@ -11,8 +11,8 @@ public final class ExampleCriteria {
 		// Empty by design;
 	}
 
-	public static Example<CsvEntry> pending() {
-		final Example<CsvEntry> csvEntryExample = Example.of(new CsvEntry().setRequestStatus(RequestStatus.PENDING));
+	public static Example<CsvEntry> holding() {
+		final Example<CsvEntry> csvEntryExample = Example.of(new CsvEntry().setRequestStatus(RequestStatus.HOLDING));
 		return csvEntryExample;
 	}
 

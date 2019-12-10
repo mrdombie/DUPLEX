@@ -33,7 +33,7 @@ public class CsvCrudImpl implements CsvCrud {
 
 	@Override
 	public Optional<CsvEntry> readPendingCsvRecord() {
-		return csvEntryRepository.findOne(ExampleCriteria.pending());
+		return csvEntryRepository.findOne(ExampleCriteria.holding());
 	}
 
 	private void updateId(final List<CsvEntry> csvs, final int storedCsv) {
