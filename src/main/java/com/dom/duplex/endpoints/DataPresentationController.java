@@ -15,7 +15,7 @@ public class DataPresentationController {
 	private PresentationService presentationService;
 
 	@PostMapping(path = "/presentation")
-	public void sendPresentation() throws IOException {
+	public void sendUserToPresentation() throws IOException {
 		presentationService.send();
 	}
 }

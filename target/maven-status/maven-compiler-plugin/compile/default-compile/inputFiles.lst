@@ -1,4 +1,5 @@
 C:\Users\Dominic\Documents\GitHub\DUPLEX\src\main\java\com\dom\duplex\repository\domain\api\ApiUserList.java
+C:\Users\Dominic\Documents\GitHub\DUPLEX\src\main\java\com\dom\duplex\service\ReportService.java
 C:\Users\Dominic\Documents\GitHub\DUPLEX\src\main\java\com\dom\duplex\repository\CsvRepository.java
 C:\Users\Dominic\Documents\GitHub\DUPLEX\src\main\java\com\dom\duplex\endpoints\DataPresentationController.java
 C:\Users\Dominic\Documents\GitHub\DUPLEX\src\main\java\com\dom\duplex\repository\domain\Csv.java
@@ -13,6 +14,7 @@ C:\Users\Dominic\Documents\GitHub\DUPLEX\src\main\java\com\dom\duplex\endpoints\
 C:\Users\Dominic\Documents\GitHub\DUPLEX\src\main\java\com\dom\duplex\repository\domain\RequestStatus.java
 C:\Users\Dominic\Documents\GitHub\DUPLEX\src\main\java\com\dom\duplex\repository\CsvCrudImpl.java
 C:\Users\Dominic\Documents\GitHub\DUPLEX\src\main\java\com\dom\duplex\service\UserService.java
+C:\Users\Dominic\Documents\GitHub\DUPLEX\src\main\java\com\dom\duplex\endpoints\ReportController.java
 C:\Users\Dominic\Documents\GitHub\DUPLEX\src\main\java\com\dom\duplex\client\ThirdParty.java
 C:\Users\Dominic\Documents\GitHub\DUPLEX\src\main\java\com\dom\duplex\repository\example\ExampleCriteria.java
 C:\Users\Dominic\Documents\GitHub\DUPLEX\src\main\java\com\dom\duplex\endpoints\CsvController.java
@@ -23,5 +25,6 @@ C:\Users\Dominic\Documents\GitHub\DUPLEX\src\main\java\com\dom\duplex\client\Pre
 C:\Users\Dominic\Documents\GitHub\DUPLEX\src\main\java\com\dom\duplex\repository\domain\api\DataApiUser.java
 C:\Users\Dominic\Documents\GitHub\DUPLEX\src\main\java\com\dom\duplex\client\PresentationApiClient.java
 C:\Users\Dominic\Documents\GitHub\DUPLEX\src\main\java\com\dom\duplex\component\CsvPoolComponent.java
+C:\Users\Dominic\Documents\GitHub\DUPLEX\src\main\java\com\dom\duplex\repository\domain\Report.java
 C:\Users\Dominic\Documents\GitHub\DUPLEX\src\main\java\com\dom\duplex\repository\CsvEntryRepository.java
 C:\Users\Dominic\Documents\GitHub\DUPLEX\src\main\java\com\dom\duplex\repository\domain\api\ApiUser.java

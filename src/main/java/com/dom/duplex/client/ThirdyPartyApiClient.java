@@ -30,6 +30,7 @@ public class ThirdyPartyApiClient implements ThirdParty {
 		restTemplate.getMessageConverters().add(new ByteArrayHttpMessageConverter());
 
 		final HttpHeaders headers = new HttpHeaders();
+
 		headers.setAccept(Arrays.asList(MediaType.TEXT_PLAIN));
 
 		final HttpEntity<String> entity = new HttpEntity<>(headers);

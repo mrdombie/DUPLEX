@@ -1,14 +1,17 @@
 com\dom\duplex\client\transformer\UserApiTransformer.class
+com\dom\duplex\endpoints\ReportController.class
 com\dom\duplex\component\CsvPoolComponent.class
 com\dom\duplex\endpoints\DataPresentationController.class
 com\dom\duplex\repository\CsvCrudImpl.class
 com\dom\duplex\service\UserService.class
+com\dom\duplex\repository\domain\Report.class
 com\dom\duplex\repository\CsvRepository.class
 com\dom\duplex\RestTemplateConfiguration.class
 com\dom\duplex\service\PresentationService.class
 com\dom\duplex\repository\CsvCrud.class
 com\dom\duplex\client\ThirdParty.class
 com\dom\duplex\endpoints\exception\CsvExceptionHandler.class
+com\dom\duplex\service\ReportService.class
 com\dom\duplex\repository\CsvEntryRepository.class
 com\dom\duplex\client\ThirdyPartyApiClient.class
 com\dom\duplex\repository\domain\Csv.class

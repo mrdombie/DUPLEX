@@ -22,6 +22,12 @@ public class CsvPoolComponent {
 
 	private final Map<Integer, CsvEntry> processableEntrys = new HashMap<>();
 
+	/**
+	 * Retrieve the list of current processable requests inside the DB.
+	 *
+	 * @return a Map container the key value pairs of the CSV component
+	 */
+
 	public Map<Integer, CsvEntry> getProcessableEntrys() {
 
 		// TODO Find out why this JPA querie just doesnt want to work - filter for now

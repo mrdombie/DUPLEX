@@ -9,6 +9,13 @@ public final class UserApiTransformer {
 		// empty by design
 	}
 
+	/**
+	 * Transform a {@link CsvEntry} to a {@link CsvEntry}
+	 *
+	 * @param entry
+	 * @return {@link DataApiUser}
+	 */
+
 	public static DataApiUser toApiUser(final CsvEntry entry) {
 		return new DataApiUser().setAge(entry.getAge()).setHeight(entry.getHeight()).setName(entry.getName());
 	}
